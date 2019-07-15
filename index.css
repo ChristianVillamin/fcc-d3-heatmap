@@ -11,10 +11,58 @@ body {
   background-color: lightseagreen;
 }
 
+#container,
+#title,
+#description,
+#tooltip,
+#selector {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#container {
+  left: 50%;
+  top: 50%;
+  box-shadow: 0 0 5px gray;
+  background: white;
+}
+
+#title {
+  top: 30px;
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+}
+
+#description {
+  top: 60px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+
 #tooltip {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
+
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 15px;
   border-radius: 15px;
   text-align: center;
+  color: white;
+  visibility: hidden;
+  width: 150px;
+}
+
+#selector {
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  visibility: hidden;
+  transform: none;
+}
+
+h4 {
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 2px 2px white;
 }
