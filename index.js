@@ -13,6 +13,14 @@ d3.select('#container')
 d3.select('#title').style('left', `${svgWidth / 2}px`);
 d3.select('#description').style('left', `${svgWidth / 2}px`);
 
+// SVG
+const svg = d3
+  .select('#container')
+  .append('svg')
+  .attr('width', svgWidth)
+  .attr('height', svgHeight)
+  .attr('class', 'svg-container');
+
 // Data
 d3.json(dataURL).then(dataset => visualize(dataset));
 
@@ -28,14 +36,6 @@ const visualize = dataset => {
   d3.select('#description').text(
     `1753 - 2015: Base Temp: ${dataset.baseTemperature}°C`
   );
-
-  // SVG
-  const svg = d3
-    .select('#container')
-    .append('svg')
-    .attr('width', svgWidth)
-    .attr('height', svgHeight)
-    .attr('class', 'svg-container');
 
   // X-AXIS
   const years = dataset.monthlyVariance.map(d => new Date(d.year, 0));
